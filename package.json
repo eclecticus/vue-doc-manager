@@ -11,10 +11,13 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "dev-migrate": "node_modules/.bin/sequelize db:migrate",
+    "migrate-undo": "node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "dotenv": "^4.0.0",
     "path": "^0.12.7",
     "pg": "^6.2.3",
     "pg-hstore": "^2.3.2",
