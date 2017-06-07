@@ -20,13 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
 
-    access: {
-      type: DataTypes.STRING,
-      defaultValue: 'public',
+    permission: {
+      type: DataTypes.ENUM('view', 'suggest', 'edit'),
+      defaultValue: 'edit',
       allowNull: false,
-      validate: {
-        isIn: [['private', 'public', 'role']],
-      },
     },
 
     ownerId: {

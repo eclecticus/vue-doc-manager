@@ -18,5 +18,6 @@ export default {
     background: grey;
     padding: 10px;
     border: 1px solid grey;
+    margin-bottom: 1em;
   }
 </style>

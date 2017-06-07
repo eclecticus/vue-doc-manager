@@ -24,13 +24,10 @@ module.exports = {
         },
       },
     },
-    access: {
-      type: Sequelize.STRING,
-      defaultValue: 'public',
+    permission: {
+      type: Sequelize.ENUM('view', 'suggest', 'edit'),
+      defaultValue: 'edit',
       allowNull: false,
-      validate: {
-        isIn: [['private', 'public', 'role']],
-      },
     },
     ownerId: {
       type: Sequelize.INTEGER,
